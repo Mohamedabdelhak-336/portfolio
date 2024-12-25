@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #777;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 20px;
+}
+
+
+.introduction {
+    text-align: center;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 5px solid #e0e0e0;
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+.introduction h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 0.5rem;
+}
+
+.introduction p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 1rem;
+    line-height: 1.8;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.button:nth-child(1) {
+    background-color: #4CAF50;
+}
+
+.button:nth-child(2) {
+    background-color: #FF9800;
+}
+
+.button:nth-child(3) {
+    background-color: #2196F3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9em;
+}
+.button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.button:nth-child(1) {
+    background-color: #4CAF50;
+}
+
+.button:nth-child(2) {
+    background-color: #FF9800;
+}
+
+.button:nth-child(3) {
+    background-color: #2196F3;
+}
+
+/* New class for GitHub button */
+.button:nth-child(4) {
+    background-color: #333;
+}
