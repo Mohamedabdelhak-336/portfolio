@@ -183,28 +183,36 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
   <div class="container">
-<a class="navbar-brand fw-bold brand-animated" href="#">Portfolio</a>
+<a class="navbar-brand fw-bold brand-animated" href="#"><span id="brand">Portfolio</span></a>
+
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link nav-animated" href="#about">À propos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-animated" href="#experience">Expérience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-animated" href="#projects">Projets</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-animated" href="#skills">Compétences</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-animated" href="#contact">Contact</a>
-        </li>
+   <li class="nav-item">
+  <a class="nav-link nav-animated" href="#about" id="navAbout">À propos</a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-animated" href="#experience" id="navExperience">Expérience</a>
+
+
+</li>
+<li class="nav-item">
+  <a class="nav-link nav-animated" href="#projects" id="navProjects">Projets</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link nav-animated" href="#skills" id="navSkills">Compétences</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link nav-animated" href="#contact" id="navContact">Contact</a>
+</li>
+
+<!-- 🔽 Ajoute ceci à la fin du <ul> -->
+<li class="nav-item ms-lg-3">
+  <button id="langSwitcher" class="btn btn-outline-light btn-sm">EN</button>
+</li>
       </ul>
     </div>
   </div>
@@ -213,31 +221,39 @@
   <div class="container hero-content">
     <img src="image.png" alt="Photo de profil" class="profile-img">
 
-    <h1>Mohamed Abdelhak</h1>
-    <p class="lead">Ingénieur en Génie Logiciel | Full Stack Developer</p>
+  <h1 id="heroName">Mohamed Abdelhak</h1>
 
-    <a href="mailto:mohamed.abdelhak1@esprit.tn" class="btn btn-light mt-3">Contactez-moi</a>
-    <a href="cv_mohamed_abdelhak.pdf" class="btn btn-outline-light mt-3 ms-2" download>Télécharger mon CV</a>
+   <p class="lead" id="heroRole">Ingénieur en Génie Logiciel | Full Stack Developer</p>
+
+ <a href="mailto:mohamed.abdelhak1@esprit.tn" class="btn btn-light mt-3" id="btnContact">Contactez-moi</a>
+<a href="cv_mohamed_abdelhakfr.pdf" class="btn btn-outline-light mt-3 ms-2" download id="btnCv">
+  Télécharger mon CV
+</a>
+
 
     <!-- Infos contact animées -->
-    <div class="contact-hero mt-4">
-      <p class="fade-in"><i class="bi bi-envelope-at-fill me-2"></i><strong>Pro :</strong>
-        <a href="mailto:mohamed.abdelhak1@esprit.tn" class="text-white text-decoration-none">mohamed.abdelhak1@esprit.tn</a></p>
-
-      <p class="fade-in delay-1"><i class="bi bi-envelope-fill me-2"></i><strong>Perso :</strong>
-        <a href="mailto:mohamedabdelhak816@gmail.com" class="text-white text-decoration-none">mohamedabdelhak816@gmail.com</a></p>
-
-      <p class="fade-in delay-2"><i class="bi bi-telephone-fill me-2"></i><strong>Tél :</strong>
-        <a href="tel:+21656025170" class="text-white text-decoration-none">+216 56 025 170</a></p>
-    </div>
-  </div>
+  <div class="contact-hero mt-4">
+  <p class="fade-in">
+    <i class="bi bi-envelope-at-fill me-2"></i><strong id="labelPro">Pro :</strong>
+    <a href="mailto:mohamed.abdelhak1@esprit.tn" class="text-white text-decoration-none">mohamed.abdelhak1@esprit.tn</a>
+  </p>
+  <p class="fade-in delay-1">
+    <i class="bi bi-envelope-fill me-2"></i><strong id="labelPerso">Perso :</strong>
+    <a href="mailto:mohamedabdelhak816@gmail.com" class="text-white text-decoration-none">mohamedabdelhak816@gmail.com</a>
+  </p>
+  <p class="fade-in delay-2">
+    <i class="bi bi-telephone-fill me-2"></i><strong id="labelTel">Tél :</strong>
+    <a href="tel:+21656025170" class="text-white text-decoration-none">+216 56 025 170</a>
+  </p>
+</div>
 </section>
 
 
 <!-- À propos -->
 <section id="about" class="container mt-5 pt-5">
-  <h2 class="section-title">À propos</h2>
-  <p>
+  <h2 class="section-title" id="aboutTitle">À propos</h2>
+
+  <p id="aboutText">
    Ingénieur logiciel Fullstack récemment diplômé de l’ESPRIT et fort d’un projet de fin d’études réalisé chez Capgemini Engineering Tunisie, j’ai conçu et déployé une 
 plateforme de forum technique complète. Passionné par la création de solutions robustes et évolutives, je maîtrise ASP .NET Core, Entity Framework, JavaScript (ES6+) et 
 les pratiques CI/CD (Jenkins, Docker), ainsi que la modélisation de données sous SQL Server. Rigoureux, curieux et orienté résultats, je suis à la recherche d’un poste 
@@ -245,14 +261,14 @@ d’ingénieur logiciel où je pourrai contribuer à des projets innovants et co
   </p>
 </section>
 <!-- Expérience Professionnelle -->
-<section id="experience" class="container mt-5">
-  <h2 class="section-title">Expérience Professionnelle</h2>
+<section id="experience" class="container mt-5" >
+  <h2 class="section-title" id="experienceTitle">Expérience Professionnelle</h2>
 
   <div class="experience-card">
-    <div class="experience-title">Stage de Fin d’Études</div>
-    <div class="experience-subtitle">Capgemini Engineering – Ariana</div>
-    <div class="experience-date"><i class="bi bi-calendar-event"></i> 01/2025 – 07/2025</div>
-    <ul>
+    <div class="experience-title" id="exp1Title">Stage de Fin d’Études</div>
+    <div class="experience-subtitle" id="exp1Place">Capgemini Engineering – Ariana</div>
+    <div class="experience-date" id="exp1Date"><i class="bi bi-calendar-event"></i> 01/2025 – 07/2025</div>
+    <ul id="exp1Bullets">
       <li>Développement d’une plateforme de blog et discussion pour une communauté de développeurs</li>
       <li>Conception complète (frontend/backend) & implémentation</li>
       <li>Évaluations, feedbacks, quiz techniques, interface admin</li>
@@ -260,11 +276,11 @@ d’ingénieur logiciel où je pourrai contribuer à des projets innovants et co
     </ul>
   </div>
 
-  <div class="experience-card" id="experience" class="container mt-5" >
-    <div class="experience-title">Stage Assistant d’Ingénieur</div>
-    <div class="experience-subtitle">Montron Consulting – Tunisie</div>
-    <div class="experience-date"><i class="bi bi-calendar-event"></i> 04/2023 – 06/2023</div>
-    <ul>
+  <div class="experience-card">
+    <div class="experience-title" id="exp2Title">Stage Assistant d’Ingénieur</div>
+    <div class="experience-subtitle" id="exp2Place">Montron Consulting – Tunisie</div>
+    <div class="experience-date" id="exp2Date"><i class="bi bi-calendar-event"></i> 04/2023 – 06/2023</div>
+    <ul id="exp2Bullets">
       <li>Participation à divers projets en Java, C++, Angular</li>
       <li>Analyse des besoins, réalisation des tests</li>
       <li>Renforcement des compétences d’adaptation et de travail en équipe</li>
@@ -272,77 +288,82 @@ d’ingénieur logiciel où je pourrai contribuer à des projets innovants et co
   </div>
 
   <div class="experience-card">
-    <div class="experience-title">Stage Ouvrier</div>
-    <div class="experience-subtitle">Office de l'Aviation Civile et des Aéroports – Tunisie</div>
-    <div class="experience-date"><i class="bi bi-calendar-event"></i> 07/2022 – 08/2022</div>
-    <ul>
+    <div class="experience-title" id="exp3Title">Stage Ouvrier</div>
+    <div class="experience-subtitle" id="exp3Place">Office de l'Aviation Civile et des Aéroports – Tunisie</div>
+    <div class="experience-date" id="exp3Date"><i class="bi bi-calendar-event"></i> 07/2022 – 08/2022</div>
+    <ul id="exp3Bullets">
       <li>Développement d’un logiciel de gestion des équipements</li>
       <li>Projet Desktop/Mobile pour un garage</li>
       <li>Solutions concrètes répondant aux besoins des utilisateurs</li>
     </ul>
   </div>
-
 </section>
+
 
 <!-- Projets -->
 
 <section id="projects" class="container mt-5">
-  <h2 class="section-title">Projets</h2>
+  <h2 class="section-title" id="projectsTitle">Projets</h2>
+
   <div class="row g-4">
     <div class="col-md-6">
       <div class="card project-card">
         <div class="card-body">
-          <h5 class="card-title">forum de discussion pour les développeurs </h5>
-          <p class="card-text">Plateforme de discussion pour développeurs avec likes, quiz, admin panel, CI/CD Jenkins. Stack : .NET Core, EF, JS, SQL Server.</p>
-          <a href="https://github.com/Mohamedabdelhak-336" target="_blank" class="btn btn-outline-primary"><i class="bi bi-github github-icon"></i> Voir sur GitHub</a>
+          <h5 class="card-title" id="proj1Title">forum de discussion pour les développeurs</h5>
+          <p class="card-text" id="proj1Desc">Plateforme de discussion pour développeurs avec likes, quiz, admin panel, CI/CD Jenkins. Stack : .NET Core, EF, JS, SQL Server.</p>
+          <a href="https://github.com/Mohamedabdelhak-336" target="_blank" class="btn btn-outline-primary" id="proj1Btn"><i class="bi bi-github github-icon"></i> Voir sur GitHub</a>
         </div>
       </div>
     </div>
+
     <div class="col-md-6">
       <div class="card project-card">
         <div class="card-body">
-          <h5 class="card-title">Application desktop web coup du monde
-</h5>
-          <p class="card-text">Logiciel web pour gérer les reservations dans le coup du monde . Stack :Java, Symfony </p>
-<a href="https://github.com/Mohamedabdelhak-336/application-desktop-web-coup-du-monde.git" target="_blank" class="btn btn-outline-primary"><i class="bi bi-github github-icon"></i> Voir sur GitHub</a>
+          <h5 class="card-title" id="proj2Title">Application desktop web coup du monde</h5>
+          <p class="card-text" id="proj2Desc">Logiciel web pour gérer les reservations dans le coup du monde . Stack :Java, Symfony</p>
+          <a href="https://github.com/Mohamedabdelhak-336/application-desktop-web-coup-du-monde.git" target="_blank" class="btn btn-outline-primary" id="proj2Btn"><i class="bi bi-github github-icon"></i> Voir sur GitHub</a>
         </div>
       </div>
     </div>
+
     <div class="col-md-6">
       <div class="card project-card">
         <div class="card-body">
-          <h5 class="card-title">DevOps – Pipeline CI/CD</h5>
-          <p class="card-text">Automatisation complète avec Jenkins : build, test, vulnérabilités, génération de rapports.</p>
- <a href="https://github.com/Mohamedabdelhak-336/devops.git" target="_blank" class="btn btn-outline-primary"><i class="bi bi-github github-icon"></i> Voir sur GitHub</a>
+          <h5 class="card-title" id="proj3Title">DevOps – Pipeline CI/CD</h5>
+          <p class="card-text" id="proj3Desc">Automatisation complète avec Jenkins : build, test, vulnérabilités, génération de rapports.</p>
+          <a href="https://github.com/Mohamedabdelhak-336/devops.git" target="_blank" class="btn btn-outline-primary" id="proj3Btn"><i class="bi bi-github github-icon"></i> Voir sur GitHub</a>
         </div>
       </div>
     </div>
-<div class="col-md-6">
+
+    <div class="col-md-6">
       <div class="card project-card">
         <div class="card-body">
-          <h5 class="card-title">pocker planing scrum</h5>
-          <p class="card-text">Logiciel web pour planing de projet scrum . Stack :Springboot, Angular </p>
-  <a href="https://github.com/Mohamedabdelhak-336/pocker-planing-scum-front-back-.git" target="_blank" class="btn btn-outline-primary"><i class="bi bi-github github-icon"></i> Voir sur GitHub</a>
+          <h5 class="card-title" id="proj4Title">pocker planing scrum</h5>
+          <p class="card-text" id="proj4Desc">Logiciel web pour planing de projet scrum . Stack :Springboot, Angular</p>
+          <a href="https://github.com/Mohamedabdelhak-336/pocker-planing-scum-front-back-.git" target="_blank" class="btn btn-outline-primary" id="proj4Btn"><i class="bi bi-github github-icon"></i> Voir sur GitHub</a>
         </div>
       </div>
     </div>
-  <div class="col-md-6">
+
+    <div class="col-md-6">
       <div class="card project-card">
         <div class="card-body">
-          <h5 class="card-title">Douceur naturelle </h5>
-          <p class="card-text"> Site vitrine pour un boutique en ligne de miel</p>
- <a href="https://github.com/Mohamedabdelhak-336/douceur-naturelle.git" target="_blank" class="btn btn-outline-primary"><i class="bi bi-github github-icon"></i> Voir sur GitHub</a>
+          <h5 class="card-title" id="proj5Title">Douceur naturelle</h5>
+          <p class="card-text" id="proj5Desc">Site vitrine pour un boutique en ligne de miel</p>
+          <a href="https://github.com/Mohamedabdelhak-336/douceur-naturelle.git" target="_blank" class="btn btn-outline-primary" id="proj5Btn"><i class="bi bi-github github-icon"></i> Voir sur GitHub</a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 <!-- Compétences -->
 <section id="skills" class="container mt-5">
-  <h2 class="section-title">Compétences</h2>
+  <h2 class="section-title" id="skillsTitle">Compétences</h2>
   <div class="row">
     <div class="col-md-3">
-      <h5>Langages</h5>
+      <h5 id="skillsLang">Langages</h5>
       <ul>
         <li>C / C++</li>
         <li>C#</li>
@@ -354,7 +375,8 @@ d’ingénieur logiciel où je pourrai contribuer à des projets innovants et co
       </ul>
     </div>
     <div class="col-md-3">
-      <h5>Frameworks & Libraries</h5>
+      <h5 id="skillsFw">Frameworks & Libraries</h5>
+
       <ul>
         <li>ASP.NET Core</li>
         <li>Entity Framework</li>
@@ -365,7 +387,8 @@ d’ingénieur logiciel où je pourrai contribuer à des projets innovants et co
       </ul>
     </div>
     <div class="col-md-3">
-      <h5>Base de Données & DevOps</h5>
+     <h5 id="skillsDB">Base de Données & DevOps</h5>
+
       <ul>
         <li>SQL Server</li>
         <li>MongoDB</li>
@@ -375,7 +398,7 @@ d’ingénieur logiciel où je pourrai contribuer à des projets innovants et co
       </ul>
     </div>
     <div class="col-md-3">
-      <h5>UI/UX & Autres</h5>
+     <h5 id="skillsUi">UI/UX & Autres</h5>
       <ul>
         <li>HTML / CSS</li>
         <li>UX / UI Design</li>
@@ -388,7 +411,8 @@ d’ingénieur logiciel où je pourrai contribuer à des projets innovants et co
 
 <!-- Contact -->
 <section id="contact" class="container mt-5 mb-5">
-  <h2 class="section-title text-center">Contact</h2>
+  <h2 class="section-title text-center" id="contactTitle">Contact</h2>
+
   <div class="contact-box mx-auto" style="max-width: 600px;">
     <div class="contact-info">
       <p><i class="bi bi-envelope-fill"></i> <a href="mailto:mohamed.abdelhak1@esprit.tn">mohamed.abdelhak1@esprit.tn</a></p>
@@ -397,6 +421,257 @@ d’ingénieur logiciel où je pourrai contribuer à des projets innovants et co
     </div>
   </div>
 </section>
+<script>
+  const translations = {
+    fr: {
+      htmlLang: "fr",
+      brand: "Portfolio",
+      navAbout: "À propos",
+      navExperience: "Expérience",
+      navProjects: "Projets",
+      navSkills: "Compétences",
+      navContact: "Contact",
+
+      heroName: "Mohamed Abdelhak",
+      heroRole: "Ingénieur en Génie Logiciel | Full Stack Developer",
+      btnContact: "Contactez-moi",
+      btnCv: "Télécharger mon CV",
+
+      // 👉 fichiers CV (FR)
+      cvHref: "cv_mohamed_abdelhakfr.pdf",
+      cvFilename: "CV_Mohamed_Abdelhak_FR.pdf",
+
+      labelPro: "Pro :",
+      labelPerso: "Perso :",
+      labelTel: "Tél :",
+
+      aboutTitle: "À propos",
+      aboutText: `Ingénieur logiciel Fullstack récemment diplômé de l’ESPRIT et fort d’un projet de fin d’études réalisé chez Capgemini Engineering Tunisie, j’ai conçu et déployé une plateforme de forum technique complète. Passionné par la création de solutions robustes et évolutives, je maîtrise ASP .NET Core, Entity Framework, JavaScript (ES6+) et les pratiques CI/CD (Jenkins, Docker), ainsi que la modélisation de données sous SQL Server. Rigoureux, curieux et orienté résultats, je suis à la recherche d’un poste d’ingénieur logiciel où je pourrai contribuer à des projets innovants et continuer à développer mes compétences Fullstack.`,
+
+      experienceTitle: "Expérience Professionnelle",
+      exp1Title: "Stage de Fin d’Études",
+      exp1Place: "Capgemini Engineering – Ariana",
+      exp1Date: "01/2025 – 07/2025",
+      exp1Bullets: [
+        "Développement d’une plateforme de blog et discussion pour une communauté de développeurs",
+        "Conception complète (frontend/backend) & implémentation",
+        "Évaluations, feedbacks, quiz techniques, interface admin",
+        "Technologies : ASP.NET Core, EF, JS, SQL Server, CI/CD Jenkins"
+      ],
+
+      exp2Title: "Stage Assistant d’Ingénieur",
+      exp2Place: "Montron Consulting – Tunisie",
+      exp2Date: "04/2023 – 06/2023",
+      exp2Bullets: [
+        "Participation à divers projets en Java, C++, Angular",
+        "Analyse des besoins, réalisation des tests",
+        "Renforcement des compétences d’adaptation et de travail en équipe"
+      ],
+
+      exp3Title: "Stage Ouvrier",
+      exp3Place: "Office de l'Aviation Civile et des Aéroports – Tunisie",
+      exp3Date: "07/2022 – 08/2022",
+      exp3Bullets: [
+        "Développement d’un logiciel de gestion des équipements",
+        "Projet Desktop/Mobile pour un garage",
+        "Solutions concrètes répondant aux besoins des utilisateurs"
+      ],
+
+      projectsTitle: "Projets",
+      proj1Title: "forum de discussion pour les développeurs",
+      proj1Desc: "Plateforme de discussion pour développeurs avec likes, quiz, admin panel, CI/CD Jenkins. Stack : .NET Core, EF, JS, SQL Server.",
+      proj1Btn: "Voir sur GitHub",
+
+      proj2Title: "Application desktop web coup du monde",
+      proj2Desc: "Logiciel web pour gérer les reservations dans le coup du monde . Stack :Java, Symfony",
+      proj2Btn: "Voir sur GitHub",
+
+      proj3Title: "DevOps – Pipeline CI/CD",
+      proj3Desc: "Automatisation complète avec Jenkins : build, test, vulnérabilités, génération de rapports.",
+      proj3Btn: "Voir sur GitHub",
+
+      proj4Title: "pocker planing scrum",
+      proj4Desc: "Logiciel web pour planing de projet scrum . Stack :Springboot, Angular",
+      proj4Btn: "Voir sur GitHub",
+
+      proj5Title: "Douceur naturelle",
+      proj5Desc: "Site vitrine pour un boutique en ligne de miel",
+      proj5Btn: "Voir sur GitHub",
+
+      skillsTitle: "Compétences",
+      skillsLang: "Langages",
+      skillsFw: "Frameworks & Libraries",
+      skillsDB: "Base de Données & DevOps",
+      skillsUi: "UI/UX & Autres",
+
+      contactTitle: "Contact",
+    },
+
+    en: {
+      htmlLang: "en",
+      brand: "Portfolio",
+      navAbout: "About",
+      navExperience: "Experience",
+      navProjects: "Projects",
+      navSkills: "Skills",
+      navContact: "Contact",
+
+      heroName: "Mohamed Abdelhak",
+      heroRole: "Software Engineer | Full Stack Developer",
+      btnContact: "Contact me",
+      btnCv: "Download my CV",
+
+      // 👉 fichiers CV (EN)
+      cvHref: "cv_mohamed_abdelhakang.pdf",
+      cvFilename: "Mohamed_Abdelhak_Resume_EN.pdf",
+
+      labelPro: "Work:",
+      labelPerso: "Personal:",
+      labelTel: "Phone:",
+
+      aboutTitle: "About",
+      aboutText: `Full-stack Software Engineer, recently graduated from ESPRIT. During my graduation internship at Capgemini Engineering Tunisia, I designed and deployed a complete technical forum platform. Passionate about building robust and scalable solutions, I’m proficient with ASP.NET Core, Entity Framework, JavaScript (ES6+), CI/CD practices (Jenkins, Docker) and SQL Server data modeling. Rigorous, curious, and result-oriented, I’m looking for a software engineer role where I can contribute to innovative projects and continue growing my full-stack skills.`,
+
+      experienceTitle: "Professional Experience",
+      exp1Title: "Graduation Internship",
+      exp1Place: "Capgemini Engineering – Ariana",
+      exp1Date: "01/2025 – 07/2025",
+      exp1Bullets: [
+        "Developed a blogging & discussion platform for a developers' community",
+        "End-to-end design (frontend/backend) & implementation",
+        "Evaluations, feedback, technical quizzes, admin interface",
+        "Tech: ASP.NET Core, EF, JS, SQL Server, Jenkins CI/CD"
+      ],
+
+      exp2Title: "Assistant Engineer Intern",
+      exp2Place: "Montron Consulting – Tunisia",
+      exp2Date: "04/2023 – 06/2023",
+      exp2Bullets: [
+        "Contributed to multiple projects in Java, C++, Angular",
+        "Requirements analysis and test execution",
+        "Strengthened adaptability and teamwork skills"
+      ],
+
+      exp3Title: "Worker Internship",
+      exp3Place: "OACA – Tunisia",
+      exp3Date: "07/2022 – 08/2022",
+      exp3Bullets: [
+        "Built an equipment management application",
+        "Desktop/Mobile project for a garage",
+        "Delivered concrete solutions to user needs"
+      ],
+
+      projectsTitle: "Projects",
+      proj1Title: "Developers’ discussion forum",
+      proj1Desc: "Discussion platform with likes, quizzes, admin panel, and Jenkins CI/CD. Stack: .NET Core, EF, JS, SQL Server.",
+      proj1Btn: "View on GitHub",
+
+      proj2Title: "World Cup booking app (desktop/web)",
+      proj2Desc: "Web software to manage World Cup reservations. Stack: Java, Symfony.",
+      proj2Btn: "View on GitHub",
+
+      proj3Title: "DevOps – CI/CD Pipeline",
+      proj3Desc: "End-to-end automation with Jenkins: build, tests, vulnerability scan, and reports.",
+      proj3Btn: "View on GitHub",
+
+      proj4Title: "Poker Planning (Scrum)",
+      proj4Desc: "Web app for Scrum planning. Stack: Spring Boot, Angular.",
+      proj4Btn: "View on GitHub",
+
+      proj5Title: "Douceur Naturelle",
+      proj5Desc: "Showcase website for an online honey shop.",
+      proj5Btn: "View on GitHub",
+
+      skillsTitle: "Skills",
+      skillsLang: "Languages",
+      skillsFw: "Frameworks & Libraries",
+      skillsDB: "Databases & DevOps",
+      skillsUi: "UI/UX & Others",
+
+      contactTitle: "Contact",
+    }
+  };
+
+  // IDs de texte simple
+  const mapIds = [
+    "brand","navAbout","navExperience","navProjects","navSkills","navContact",
+    "heroName","heroRole","btnContact","btnCv","labelPro","labelPerso","labelTel",
+    "aboutTitle","aboutText",
+    "experienceTitle","exp1Title","exp1Place","exp1Date","exp2Title","exp2Place","exp2Date","exp3Title","exp3Place","exp3Date",
+    "projectsTitle",
+    "proj1Title","proj1Desc","proj1Btn",
+    "proj2Title","proj2Desc","proj2Btn",
+    "proj3Title","proj3Desc","proj3Btn",
+    "proj4Title","proj4Desc","proj4Btn",
+    "proj5Title","proj5Desc","proj5Btn",
+    "skillsTitle","skillsLang","skillsFw","skillsDB","skillsUi",
+    "contactTitle"
+  ];
+
+  // UL à reconstruire
+  const listIds = ["exp1Bullets","exp2Bullets","exp3Bullets"];
+
+  function applyLang(lang) {
+    // <html lang="...">
+    document.documentElement.lang = translations[lang].htmlLang || lang;
+
+    // Textes simples
+    mapIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && translations[lang][id] !== undefined) {
+        el.textContent = translations[lang][id];
+      }
+    });
+
+    // Listes d’items (ul/li)
+    listIds.forEach(id => {
+      const ul = document.getElementById(id);
+      const items = translations[lang][id];
+      if (!ul || !Array.isArray(items)) return;
+      ul.innerHTML = "";
+      items.forEach(txt => {
+        const li = document.createElement("li");
+        li.textContent = txt;
+        ul.appendChild(li);
+      });
+    });
+
+    // 👉 Met à jour le lien du CV selon la langue
+    const cvBtn = document.getElementById("btnCv");
+    if (cvBtn) {
+      cvBtn.href = translations[lang].cvHref;
+      cvBtn.setAttribute("download", translations[lang].cvFilename);
+    }
+
+    // Texte du switcher (affiche l’autre langue)
+    const switcher = document.getElementById("langSwitcher");
+    if (switcher) {
+      switcher.textContent = lang === "fr" ? "EN" : "FR";
+      switcher.setAttribute("aria-label", lang === "fr" ? "Switch to English" : "Passer en français");
+    }
+
+    // Titre onglet
+    const headTitle = document.querySelector("title");
+    if (headTitle) headTitle.textContent = "Mohamed Abdelhak - Portfolio";
+
+    // Persistance
+    localStorage.setItem("siteLang", lang);
+  }
+
+  // Init
+  const saved = localStorage.getItem("siteLang") || "fr";
+  applyLang(saved);
+
+  // Clic du switcher
+  document.getElementById("langSwitcher").addEventListener("click", () => {
+    const current = localStorage.getItem("siteLang") || "fr";
+    applyLang(current === "fr" ? "en" : "fr");
+  });
+</script>
+
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
