@@ -995,8 +995,36 @@
                         </a>
                     </li>
 
-
-
+                    <!-- Projet : LinkedIn Job Apply Bot -->
+                    <li class="project-item active" data-filter-item data-category="devops & automatisation">
+                        <a href="https://github.com/Mohamedabdelhak-336/LinkedInHelper" target="_blank">
+                            <figure class="project-img">
+                                <div class="project-item-icon-box"><ion-icon name="logo-github"></ion-icon></div>
+                                <img src="./assets/images/project-linkedinhelper.png" alt="Bot LinkedInHelper" loading="lazy">
+                            </figure>
+                            <h3 class="project-title">LinkedIn Job Apply Bot</h3>
+                            <p class="project-category">Bot / Automatisation</p>
+                            <p class="project-description">
+                                Script Python qui accède à votre compte LinkedIn, recherche automatiquement des offres d'emploi selon vos filtres, et postule pour vous aux annonces avec "Candidature simplifiée" en utilisant votre CV enregistré dans le dossier du projet.
+                            </p>
+                        </a>
+                    </li>
+                    <!-- Projet : Portfolio Personnel -->
+                    <li class="project-item active" data-filter-item data-category="plateformes web">
+                        <a href="https://github.com/Mohamedabdelhak-336/portfolio" target="_blank">
+                            <figure class="project-img">
+                                <div class="project-item-icon-box">
+                                    <ion-icon name="logo-github"></ion-icon>
+                                </div>
+                                <img src="./assets/images/project-portfolio.png" alt="Portfolio Mohamed Abdelhak" loading="lazy">
+                            </figure>
+                            <h3 class="project-title">Portfolio Personnel</h3>
+                            <p class="project-category">Web / Frontend</p>
+                            <p class="project-description">
+                                Mon portfolio personnel développé en HTML, CSS et JavaScript, présentant mes compétences, mes projets, mon expérience et facilitant le contact. Design moderne, responsive et optimisé pour le référencement.
+                            </p>
+                        </a>
+                    </li>
                 </ul>
 
             </section>
@@ -1035,23 +1063,17 @@
                     <h3 class="h3 form-title">Formulaire de Contact</h3>
 
                     <!-- Le formulaire n'a plus besoin de 'action' ou 'method' -->
-                    <form class="form" data-form>
-
+                    <form class="form" id="contact-form">
                         <div class="input-wrapper">
-                            <input type="text" name="fullname" class="form-input" placeholder="Nom complet" required data-form-input>
-                            <input type="email" name="email" class="form-input" placeholder="Votre adresse e-mail" required data-form-input>
+                            <input type="text" name="fullname" class="form-input" placeholder="Nom complet" required>
+                            <input type="email" name="email" class="form-input" placeholder="Votre adresse e-mail" required>
                         </div>
-
-                        <textarea name="message" class="form-input" placeholder="Votre message" required data-form-input></textarea>
-
-                        <!-- Le bouton est maintenant géré par JavaScript -->
-                        <button class="form-btn" type="submit" disabled data-form-btn>
+                        <textarea name="message" class="form-input" placeholder="Votre message" required></textarea>
+                        <button class="form-btn" type="submit">
                             <ion-icon name="paper-plane"></ion-icon>
                             <span>Envoyer le message</span>
                         </button>
-
                     </form>
-
                 </section>
 
         </article>

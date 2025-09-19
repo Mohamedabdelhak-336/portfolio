@@ -195,48 +195,15 @@ cardCloseTriggers.forEach(trigger => {
 });
 
 // Fermer la fiche au clic sur l'arrière-plan
-cardOverlays.forEach(overlay => {
-    overlay.addEventListener('click', () => {
-        closeCard(overlay.closest('.skill-card'));
-    });
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = this.fullname.value;
+    const email = this.email.value;
+    const message = this.message.value;
+    const dest = "mohamedabdelhak816@gmail.com"; // <<< remplace par ton adresse email
+    const subject = encodeURIComponent("Contact depuis le portfolio");
+    const body = encodeURIComponent(
+        `Nom : ${name}\nEmail : ${email}\nMessage :\n${message}`
+    );
+    window.location.href = `mailto:${dest}?subject=${subject}&body=${body}`;
 });
-// Gérer le formulaire de contact pour créer un lien mailto
-const contactForm = document.querySelector('[data-form]');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', function (event) {
-        // 1. Empêcher l'envoi classique du formulaire
-        event.preventDefault();
-
-        // 2. Récupérer les valeurs des champs
-        const fullName = contactForm.querySelector('[name="fullname"]').value;
-        const userEmail = contactForm.querySelector('[name="email"]').value;
-        const message = contactForm.querySelector('[name="message"]').value;
-
-        // 3. Définir votre adresse e-mail et le sujet
-        const myEmail = 'mohamedabdelhak816@gmail.com';
-        const subject = `Nouveau message de ${fullName} via votre Portfolio`;
-
-        // 4. Construire le corps de l'e-mail
-        const body = `
-      Bonjour,
-
-      Vous avez reçu un nouveau message de votre portfolio.
-
-      Nom : ${fullName}
-      Email : ${userEmail}
-
-      Message :
-      --------------------------------
-      ${message}
-      --------------------------------
-    `;
-
-        // 5. Créer et ouvrir le lien mailto
-        // encodeURIComponent s'assure que les caractères spéciaux fonctionnent correctement
-        const mailtoLink = `mailto:${myEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        // Ouvre le client de messagerie de l'utilisateur
-        window.location.href = mailtoLink;
-    });
-}
