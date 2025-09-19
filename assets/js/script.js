@@ -1,0 +1,242 @@
+'use strict';
+
+
+
+// element toggle function
+const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+
+
+
+// sidebar variables
+const sidebar = document.querySelector("[data-sidebar]");
+const sidebarBtn = document.querySelector("[data-sidebar-btn]");
+
+// sidebar toggle functionality for mobile
+sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+
+
+
+// testimonials variables
+const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
+const modalContainer = document.querySelector("[data-modal-container]");
+const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
+const overlay = document.querySelector("[data-overlay]");
+
+// modal variable
+const modalImg = document.querySelector("[data-modal-img]");
+const modalTitle = document.querySelector("[data-modal-title]");
+const modalText = document.querySelector("[data-modal-text]");
+
+// modal toggle function
+const testimonialsModalFunc = function () {
+  modalContainer.classList.toggle("active");
+  overlay.classList.toggle("active");
+}
+
+// add click event to all modal items
+for (let i = 0; i < testimonialsItem.length; i++) {
+
+  testimonialsItem[i].addEventListener("click", function () {
+
+    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
+    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
+    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
+    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+
+    testimonialsModalFunc();
+
+  });
+
+}
+
+// add click event to modal close button
+modalCloseBtn.addEventListener("click", testimonialsModalFunc);
+overlay.addEventListener("click", testimonialsModalFunc);
+
+
+
+// custom select variables
+const select = document.querySelector("[data-select]");
+const selectItems = document.querySelectorAll("[data-select-item]");
+const selectValue = document.querySelector("[data-selecct-value]");
+const filterBtn = document.querySelectorAll("[data-filter-btn]");
+
+select.addEventListener("click", function () { elementToggleFunc(this); });
+
+// add event in all select items
+for (let i = 0; i < selectItems.length; i++) {
+  selectItems[i].addEventListener("click", function () {
+
+    let selectedValue = this.innerText.toLowerCase();
+    selectValue.innerText = this.innerText;
+    elementToggleFunc(select);
+    filterFunc(selectedValue);
+
+  });
+}
+
+// filter variables
+const filterItems = document.querySelectorAll("[data-filter-item]");
+
+const filterFunc = function (selectedValue) {
+
+  for (let i = 0; i < filterItems.length; i++) {
+
+    if (selectedValue === "all") {
+      filterItems[i].classList.add("active");
+    } else if (selectedValue === filterItems[i].dataset.category) {
+      filterItems[i].classList.add("active");
+    } else {
+      filterItems[i].classList.remove("active");
+    }
+
+  }
+
+}
+
+// add event in all filter button items for large screen
+let lastClickedBtn = filterBtn[0];
+
+for (let i = 0; i < filterBtn.length; i++) {
+
+  filterBtn[i].addEventListener("click", function () {
+
+    let selectedValue = this.innerText.toLowerCase();
+    selectValue.innerText = this.innerText;
+    filterFunc(selectedValue);
+
+    lastClickedBtn.classList.remove("active");
+    this.classList.add("active");
+    lastClickedBtn = this;
+
+  });
+
+}
+
+
+
+// contact form variables
+const form = document.querySelector("[data-form]");
+const formInputs = document.querySelectorAll("[data-form-input]");
+const formBtn = document.querySelector("[data-form-btn]");
+
+// add event to all form input field
+for (let i = 0; i < formInputs.length; i++) {
+  formInputs[i].addEventListener("input", function () {
+
+    // check form validation
+    if (form.checkValidity()) {
+      formBtn.removeAttribute("disabled");
+    } else {
+      formBtn.setAttribute("disabled", "");
+    }
+
+  });
+}
+
+
+
+// page navigation variables
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
+const pages = document.querySelectorAll("[data-page]");
+
+// add event to all nav link
+for (let i = 0; i < navigationLinks.length; i++) {
+  navigationLinks[i].addEventListener("click", function () {
+
+    for (let i = 0; i < pages.length; i++) {
+      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
+        pages[i].classList.add("active");
+        navigationLinks[i].classList.add("active");
+        window.scrollTo(0, 0);
+      } else {
+        pages[i].classList.remove("active");
+        navigationLinks[i].classList.remove("active");
+      }
+    }
+
+  });
+}
+//
+// Logique pour les Fiches de Compétence
+//
+const cardTriggers = document.querySelectorAll('[data-open-card]');
+const cardCloseTriggers = document.querySelectorAll('[data-card-close]');
+const cardOverlays = document.querySelectorAll('[data-card-overlay]');
+
+// Fonction pour ouvrir une fiche
+const openCard = function (cardId) {
+    const card = document.getElementById(cardId);
+    if (card) {
+        card.classList.add('active');
+    }
+};
+
+// Fonction pour fermer une fiche
+const closeCard = function (card) {
+    if (card) {
+        card.classList.remove('active');
+    }
+};
+
+// Ouvrir la fiche au clic sur un logo
+cardTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+        e.preventDefault(); // Empêche le lien de faire remonter la page
+        openCard(trigger.dataset.openCard);
+    });
+});
+
+// Fermer la fiche au clic sur le bouton "X"
+cardCloseTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+        closeCard(trigger.closest('.skill-card'));
+    });
+});
+
+// Fermer la fiche au clic sur l'arrière-plan
+cardOverlays.forEach(overlay => {
+    overlay.addEventListener('click', () => {
+        closeCard(overlay.closest('.skill-card'));
+    });
+});
+// Gérer le formulaire de contact pour créer un lien mailto
+const contactForm = document.querySelector('[data-form]');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function (event) {
+        // 1. Empêcher l'envoi classique du formulaire
+        event.preventDefault();
+
+        // 2. Récupérer les valeurs des champs
+        const fullName = contactForm.querySelector('[name="fullname"]').value;
+        const userEmail = contactForm.querySelector('[name="email"]').value;
+        const message = contactForm.querySelector('[name="message"]').value;
+
+        // 3. Définir votre adresse e-mail et le sujet
+        const myEmail = 'mohamedabdelhak816@gmail.com';
+        const subject = `Nouveau message de ${fullName} via votre Portfolio`;
+
+        // 4. Construire le corps de l'e-mail
+        const body = `
+      Bonjour,
+
+      Vous avez reçu un nouveau message de votre portfolio.
+
+      Nom : ${fullName}
+      Email : ${userEmail}
+
+      Message :
+      --------------------------------
+      ${message}
+      --------------------------------
+    `;
+
+        // 5. Créer et ouvrir le lien mailto
+        // encodeURIComponent s'assure que les caractères spéciaux fonctionnent correctement
+        const mailtoLink = `mailto:${myEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Ouvre le client de messagerie de l'utilisateur
+        window.location.href = mailtoLink;
+    });
+}
